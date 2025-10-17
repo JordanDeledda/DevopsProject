@@ -1,0 +1,1 @@
+kubeconfig = "/home/ubuntu/.kube/config"
