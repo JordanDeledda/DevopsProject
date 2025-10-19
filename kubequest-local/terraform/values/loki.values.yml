@@ -1,0 +1,9 @@
+loki:
+  enabled: true
+  persistence:
+    enabled: false
+
+promtail:
+  enabled: true
+  serviceMonitor:
+    enabled: true

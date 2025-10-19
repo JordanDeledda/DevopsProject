@@ -1,0 +1,11 @@
+grafana:
+  adminPassword: "${grafana_admin_password}"
+  service:
+    type: LoadBalancer
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    hosts:
+      - grafana.local.test
+    path: /
+    pathType: Prefix

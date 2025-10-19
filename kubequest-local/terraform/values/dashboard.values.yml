@@ -1,0 +1,14 @@
+metricsScraper:
+  enabled: true
+
+service:
+  type: LoadBalancer
+
+ingress:
+  enabled: true
+  className: nginx
+  hosts:
+    - dashboard.local.test
+  paths:
+    - /
+  pathType: Prefix

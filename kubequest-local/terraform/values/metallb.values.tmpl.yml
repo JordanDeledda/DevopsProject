@@ -1,0 +1,11 @@
+ipAddressPools:
+  - name: default-pool
+    addresses:
+%{ for rng in metallb_address_pool ~}
+      - "${rng}"
+%{ endfor ~}
+
+l2Advertisements:
+  - name: default-adv
+    ipAddressPools:
+      - default-pool

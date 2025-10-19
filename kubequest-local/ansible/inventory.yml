@@ -1,0 +1,22 @@
+all:
+  vars:
+    ansible_user: ubuntu
+    ansible_ssh_private_key_file: ~/.ssh/id_ed25519
+
+  children:
+    master:
+      hosts:
+        master:
+          ansible_host: 192.168.1.100
+
+    workers:
+      hosts:
+        worker1:
+          ansible_host: 192.168.1.101
+        worker2:
+          ansible_host: 192.168.1.102
+
+    kubernetes:
+      children:
+        workers:
+        master:

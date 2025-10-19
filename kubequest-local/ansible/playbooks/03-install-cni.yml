@@ -1,0 +1,10 @@
+- name: Install CNI (Flannel)
+  hosts: master
+  become: true
+  gather_facts: false
+  tasks:
+    - name: Apply Flannel manifest
+      command: >
+        kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+      environment:
+        KUBECONFIG: /etc/kubernetes/admin.conf
