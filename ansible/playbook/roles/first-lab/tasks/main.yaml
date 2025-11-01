@@ -1,0 +1,13 @@
+- name: Ansible role to install nginx and UFW
+  apt:
+    pkg:
+      - ufw
+      - nginx
+    state: present
+    update_cache: yes
+
+- name: Copy of site template
+  copy:
+    src: /home/srednet/DevopsProject/site_template.html
+    dest: /var/www/html/index.nginx-debian.html
+

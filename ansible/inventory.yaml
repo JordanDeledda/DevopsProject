@@ -1,0 +1,21 @@
+all:
+  children:
+    web:
+    db:
+    admin:
+
+
+slaves:
+  children:
+    web:
+    db:
+
+
+admin:
+  hosts: 192.168.56.10
+
+web:
+  hosts: 192.168.56.20
+
+db:
+  hosts: 192.168.56.30
